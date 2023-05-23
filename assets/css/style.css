@@ -149,10 +149,6 @@ input {
   height: 45px;
 }
 
-input[type="submit"] {
-  max-width: 150px;
-}
-
 textarea {
   height: 150px;
   resize: none;
@@ -443,6 +439,8 @@ h2 {
 
 .ph-categories h2 {
   margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 42px;
 }
 
 .ph-categories p {
@@ -509,6 +507,8 @@ h2 {
 .ph-why-us {
   background-image: url("https://adventor.wpengine.com/wp-content/uploads/2021/07/icon-section-bg.jpg");
   background-position: 20% 75%;
+  position: relative;
+  z-index: 5;
 }
 
 .ph-why-us h2 {
@@ -888,6 +888,13 @@ h2 {
           transform: scale(1.18);
 }
 
+@media screen and (max-width: 1400px) {
+  .ph-categories h2 {
+    margin-bottom: 15px;
+    font-size: 35px;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .ph-header__wrapper {
     display: -webkit-box !important;
@@ -958,6 +965,7 @@ h2 {
     padding: 50px 0;
     background-color: #DD0C39;
     text-align: center;
+    height: 100vh;
   }
   nav.ph-header__menu ul li {
     display: block;
