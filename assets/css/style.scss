@@ -249,7 +249,7 @@ form .ph-half {
     padding: 15px;
 
     nav {
-        ul {
+        >ul {
             display: flex;
         }
 
@@ -264,7 +264,7 @@ form .ph-half {
             color: #333;
         }
 
-        .current_page_item>a {
+        .ph-current-menu>a {
             color: $color-primary;
         }
     }
@@ -307,7 +307,7 @@ form .ph-half {
 // Header Ends
 
 // Banner Section Starts
-h2 {
+.ph-banner h2 {
     font-size: 50px;
     text-transform: capitalize;
 }
@@ -454,6 +454,7 @@ h2 {
             .ph-categories__item--wrapper:after,
             .ph-categories__item--content {
                 opacity: 1;
+                visibility: visible;
             }
 
             .ph-categories__item--content {
@@ -489,6 +490,7 @@ h2 {
             transition: all 0.5s;
             z-index: 2;
             opacity: 0;
+            visibility: hidden;
 
         }
     }
@@ -603,6 +605,11 @@ h2 {
 
 .ph-blog {
 
+    a,
+    .ph-blog__date {
+        text-shadow: 2px 1px 4px black;
+    }
+
     &__title {
         max-width: 75%;
         margin: auto;
@@ -643,7 +650,6 @@ h2 {
 
         a {
             color: #fff;
-            text-shadow: none;
         }
 
         &:hover {
@@ -677,6 +683,7 @@ h2 {
         margin-bottom: 50px;
         color: #fff;
         text-shadow: none;
+        text-shadow: 2px 1px 4px black;
     }
 
     &__wrapper {
@@ -702,7 +709,6 @@ h2 {
     color: #fff;
 }
 
-footer {}
 
 // Innterpages starts
 .ph-innerpage {
@@ -863,11 +869,182 @@ footer {}
     }
 }
 
+@media screen and (max-width: 1200px) {
+
+    .ph-categories {
+        &__wrapper {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 3px 15px;
+            margin: 15px;
+        }
+
+        img {
+            height: 60vh;
+            min-height: 500px;
+        }
+
+        a {
+            display: block;
+        }
+    }
+
+    .ph-why-us {
+        background-image: unset;
+
+        &__wrapper {
+            margin: 0;
+        }
+
+        &__list {}
+    }
+
+    .ph-blog__list {
+        column-count: 3;
+    }
+
+    .ph-blog__item:not(.base) {
+        display: none;
+    }
+
+    .ph-clients {
+        &__wrapper {
+            overflow: hidden;
+        }
+
+        &__item {
+            max-width: 100%;
+            width: 50%;
+            overflow: hidden;
+
+            img {
+                max-width: 180px;
+                margin: 15px auto;
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .ph-banner__item--content {
+        max-width: calc(100% - 30px);
+        margin: 0 15px;
+    }
+
+    .ph-about {
+        &__wrapper {
+            display: block;
+        }
+
+        &__title {
+            margin-bottom: 50px;
+        }
+    }
+
+    .ph-gallery {
+        margin-top: 10px;
+
+        &__grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 250px);
+
+            &--item:nth-of-type(1) {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            &--item:nth-of-type(2) {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+
+            &--item:nth-of-type(3) {
+                grid-area: 2 / 1 / 3 / 3;
+            }
+
+            &--item:nth-of-type(4) {
+                grid-area: 1 / 3 / 3 / 5;
+            }
+
+            &--item:nth-of-type(5) {
+                grid-area: 3 / 1 / 5 / 3;
+            }
+
+            &--item:nth-of-type(6) {
+                grid-area: 3 / 3 / 4 / 5;
+            }
+
+            &--item:nth-of-type(7) {
+                grid-area: 4 / 3 / 5 / 4;
+            }
+
+            &--item:nth-of-type(8) {
+                grid-area: 4 / 4 / 5 / 5;
+            }
+
+            &--item:nth-of-type(9) {
+                grid-area: 5 / 1 / 7 / 5;
+
+                img {
+                    object-position: center 70%;
+                }
+            }
+        }
+    }
+
+    .ph-copyright p {
+        font-size: 16px;
+    }
+}
+
 @media screen and (min-width: 992px) {
     .ph-header__wrapper {
         display: flex !important;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .ph-gallery {
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(8, 250px);
+
+            &--item:nth-of-type(1) {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            &--item:nth-of-type(2) {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+
+            &--item:nth-of-type(3) {
+                grid-area: 2 / 1 / 3 / 3;
+            }
+
+            &--item:nth-of-type(4) {
+                grid-area: 3 / 1 / 5 / 2;
+            }
+
+            &--item:nth-of-type(5) {
+                grid-area: 3 / 2 / 5 / 3;
+            }
+
+            &--item:nth-of-type(6) {
+                grid-area: 5 / 1 / 6 / 2;
+            }
+
+            &--item:nth-of-type(7) {
+                grid-area: 6 / 1 / 7 / 2;
+            }
+
+            &--item:nth-of-type(8) {
+                grid-area: 5 / 2 / 7 / 3;
+            }
+
+            &--item:nth-of-type(9) {
+                grid-area: 7 / 1 / 9 / 3;
+            }
+        }
     }
 }
 
@@ -875,7 +1052,9 @@ footer {}
     .ph-banner__item--content {
         left: 50%;
     }
+
 }
+
 
 @media screen and (max-width: 991px) {
     .ph-header {
@@ -926,7 +1105,7 @@ footer {}
         }
     }
 
-    nav.ph-header__menu ul {
+    nav.ph-header__menu>ul {
         display: none;
         position: absolute;
         top: 130px;
@@ -955,5 +1134,41 @@ footer {}
 
     .ph-half .ph-input-wrapper {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ph-categories__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        font-size: 16px;
+    }
+
+    .ph-banner h2 {
+        font-size: 36px;
+    }
+
+    .ph-why-us__item {
+        flex-wrap: wrap;
+
+        img {
+            display: block;
+        }
+    }
+
+    .ph-blog {
+        &__list {
+            column-count: 1;
+        }
+
+        &__item--content {
+            h3 {
+                font-size: 18px;
+            }
+        }
     }
 }
